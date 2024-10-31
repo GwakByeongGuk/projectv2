@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+starlette
+jinja2
+sqlalchemy
+pymysql
+matplotlib
+pytz
+python-multipart

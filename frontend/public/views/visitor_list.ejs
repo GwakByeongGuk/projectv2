@@ -115,7 +115,7 @@
       <td><%= new Date(visitor.regdate).toLocaleString() %></td>
       <td><%= visitor.status %></td>
       <td id="exit-cell-<%= visitor.uno %>">
-        <% if (visitor.status === "승인됨") { %>
+        <% if (visitor.status === "APPROVED") { %>
           <button onclick="logExit('<%= visitor.uno %>')">퇴입</button>
         <% } %>
       </td>

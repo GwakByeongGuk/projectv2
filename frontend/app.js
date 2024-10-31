@@ -66,12 +66,31 @@ app.get('/admin-dashboard', async (req, res) => {
   }
 });
 
+app.post('/admin-login', (req, res) => {
+    const { username, password } = req.body;
+
+    console.log(`Incoming login attempt - Username: ${username}`);
+
+    if (username === 'admin' && password === 'admin') {
+        res.json({
+            success: true,
+            message: '로그인 성공',
+            redirect_url: '/admin-dashboard'
+        });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: '로그인 실패: 아이디 또는 비밀번호가 잘못되었습니다.'
+        });
+    }
+});
+
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // 서버 시작
-app.listen(port, () => {
+app.listen(port, '0.0.0.0',() => {
   console.log(`frontend server on port ${port}`);
 });
 

@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from starlette.responses import JSONResponse
 import logging
 
-from models.admin import User, Status
+from models.visitor import User, Status
 from service import database
 from service.database import get_db
 from service.email import send_notification_email
@@ -51,7 +51,7 @@ async def visitor_register(
     new_visitor.token = token
     db.commit()
 
-    approval_link = f"http://127.0.0.1:3000/visitor-detail?token={token}"
+    approval_link = f"http://13.209.97.89:3000/visitor-detail?token={token}"
     send_notification_email(email, approval_link, token)
 
     return {"message": "Visitor registered successfully"}

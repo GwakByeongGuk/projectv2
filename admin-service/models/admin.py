@@ -45,7 +45,7 @@ class Admin(Base):
     ano = Column(Integer, primary_key=True, index=True, autoincrement=True)
     aname = Column(String(50), nullable=False)
     id = Column(String(50), nullable=False, unique=True)
-    passwd = Column(String(50), nullable=False)
+    passwd = Column(String(255), nullable=False)
 
 class EntryExitLog(Base):
     __tablename__ = 'entry_exit_logs'

@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from starlette.responses import JSONResponse
 import logging
 
-from models.admin import User, Status
+from models.visitor import User, Status
 from service import database
 from service.database import get_db
 from service.email import send_notification_email
